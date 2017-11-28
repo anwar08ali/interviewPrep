@@ -1,0 +1,35 @@
+==============================
+EXAMPLE:
+
+https://github.com/angular/angular-seed
+
+to run the test cases:
+
+1. npm test
+
+
+actually inside the karma.config.js file all test files are included
+
+
+==========================
+
+steps:
+
+1. npm install karma-chrome-launcher --save-dev
+2. npm install karma-jasmine --save-dev
+3. npm install karma-junit-reporter --save-dev
+
+
+check karma.conf.js file inside myInterviewApp/test/ for mor details
+
+4. inside package.json add the following:
+
+"scripts": {
+  "test": "karma start karma.conf.js"
+}
+
+
+imp links:
+https://coderwall.com/p/u720zq/angular-unit-testing-with-jasmine
+https://howtodoinjava.com/scripting/javascript/jasmine-javascript-unit-testing-tutorial/
+===========================================

@@ -1,0 +1,13 @@
+1. npm install -g grunt-cli bower yo generator-karma generator-angular
+
+2. yo angular [app-name]
+3.Route
+
+Generates a controller and view, and configures a route in app/scripts/app.js connecting them.
+
+Example:
+
+yo angular:route myroute
+
+
+similar for controller, directive  ,service.

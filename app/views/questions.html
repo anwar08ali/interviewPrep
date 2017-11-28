@@ -1,0 +1,60 @@
+<style>
+.angTopic, .jsTopic{
+	float: left;
+	margin-right: 20px;
+}
+.clearfix{
+	clear:both;
+}
+.col1,.col2,.col3{
+	font-size: 16px;
+}
+.col1 li,.col2 li,.col3 li {
+	padding: 10px 0 5px;
+}
+</style>
+<div class="questions">
+<span class="angTopic"> <h2><a ng-click="choseTopic('angular')">1. AngularJs</a></h2></span><span class="jsTopic"><h2><a ng-click="choseTopic('js')">2. Javascripts</a></h2></span>
+<div class="clearfix"></div>
+	<h3>Questions</h3>
+	<div class="col1">
+	<ul>
+		<li ng-if="jsQsns && $index <= 23" class="clickable"  ng-repeat="qsn in jsQsnAnsObj">
+			<span ng-click="showAns(qsn.id)">{{jsQsnAnsObj[$index].id}}. {{jsQsnAnsObj[$index].qsn}}</span>
+		</li>
+		<li ng-if="!jsQsns && $index <= 18" class="clickable"  ng-repeat="qsn in angQsnAnsObj">
+			<span ng-click="showAns(qsn.id)">{{angQsnAnsObj[$index].id}}. {{angQsnAnsObj[$index].qsn}}</span>
+		</li>
+	</ul>
+	</div>
+	<div class="col2">
+		<ul>
+			<li ng-if="jsQsns && $index > 23 && $index <= 45" class="clickable"  ng-repeat="qsn in jsQsnAnsObj">
+				<span ng-click="showAns(qsn.id)">{{jsQsnAnsObj[$index].id}}. <span ng-bind-html="jsQsnAnsObj[$index].qsn"></span></span>
+			</li>
+			<li ng-if="!jsQsns && $index > 18 && $index <= 33" class="clickable"  ng-repeat="qsn in angQsnAnsObj">
+				<span ng-click="showAns(qsn.id)">{{angQsnAnsObj[$index].id}}. {{angQsnAnsObj[$index].qsn}}</span>
+			</li>
+		</ul>
+	</div>
+	<div class="col3">
+		<ul>
+			<li ng-if="jsQsns && $index > 45 && $index <= 76" class="clickable"  ng-repeat="qsn in jsQsnAnsObj">
+				<span ng-click="showAns(qsn.id)">{{jsQsnAnsObj[$index].id}}. <span ng-bind-html="jsQsnAnsObj[$index].qsn"></span></span>
+			</li>
+			<li ng-if="!jsQsns && $index > 33 && $index <= 62" class="clickable"  ng-repeat="qsn in angQsnAnsObj">
+				<span ng-click="showAns(qsn.id)">{{angQsnAnsObj[$index].id}}. {{angQsnAnsObj[$index].qsn}}</span>
+			</li>
+		</ul>
+	</div>
+	<div style="clear:both"></div>
+	</div>
+	<div ng-click="test1()">parent
+		<span ng-click="test2()">Child</span>
+	</div>
+	<div class="answers">
+	<h3>Answer {{ansId}}</h3>
+		<span id="content" ng-bind-html="ansContent"></span>
+	</div>
+
+
